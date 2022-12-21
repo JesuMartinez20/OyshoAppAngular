@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('./assets/css/google-fonts.css');
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FEFEFE;
+  line-height: 1;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:active, a:visited {
+  color: black;
+}
+
+span[class*=icon-] {
+  cursor: pointer;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-md {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-oy {
+  border-radius: 2rem;
+  padding: 0.5rem 2rem;
+  background-color: black;
+  color: white;
+}
+
+
+

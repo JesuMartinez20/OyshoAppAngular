@@ -1,0 +1,44 @@
+.sub-header {
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 29px 0px;
+}
+
+.sub-header__block-filters {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.breadcumbs-path {
+  display: inline-flex;
+}
+
+.icon--margin {
+  margin: 1rem;
+}
+
+.block-filters__short-options {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.sub-header__block-categories {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.categories-clothes {
+  display: flex;
+}
+
+.categories-clothes li {
+  margin-right: 2rem;
+}
+
+.btn-category {
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 4px #00000040;
+}
