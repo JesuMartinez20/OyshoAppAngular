@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'formatPrice'
 })
-
+//No consigo importar el pipe sin que me un error al compilar
 export class FormatPricePipe implements PipeTransform {
   transform(value: string, ...args: unknown[]): string {
     let valueFormat: string;

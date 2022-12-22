@@ -6,10 +6,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SweatshirtsService } from 'src/app/core/services/product/sweatshirts.service';
 import { ProductListComponent } from './product-list.component';
 import { SubheaderComponent } from 'src/app/core/components/subheader/subheader.component';
-import { FormatPricePipe } from 'src/app/shared/pipes/format-price.pipe';
 
 @NgModule({
-  declarations: [ProductListComponent, SubheaderComponent, FormatPricePipe],
+  declarations: [ProductListComponent, SubheaderComponent],
   imports: [
     CommonModule,
     ProductListRoutingModule,

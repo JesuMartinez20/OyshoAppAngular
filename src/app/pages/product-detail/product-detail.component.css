@@ -1,0 +1,15 @@
+.product-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding-top: 5rem;
+}
+
+.product-detail__image {
+  width: 30%;
+}
+
+.feature-price--grey {
+  color: grey;
+}

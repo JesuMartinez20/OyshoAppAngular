@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product, ResponseGetApi } from 'src/app/shared/interfaces/response-get-api';
 import { map } from 'rxjs/operators'
+import { ResponseGetDetailApi } from 'src/app/shared/interfaces/response-get-detail-api';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class SweatshirtsService {
   constructor(private http: HttpClient) { }
 
   getAllSweatshirts() {
-    //La categoria es el de las sudaderas
+    //La categoria es la de las sudaderas
     const urlEndPoint = "https://www.oysho.com/itxrest/2/catalog/store/64009600/60361120/category/1469138/product?languageId=-5&appId=1&showProducts=false";
 
     return this.http.get<ResponseGetApi>(urlEndPoint)
@@ -26,10 +27,22 @@ export class SweatshirtsService {
       );
   }
 
+  getSweatshirtDetail(id: string) {
+    const urlEndPoint = "https://www.oysho.com/itxrest/2/catalog/store/64009600/60361120/category/1469138/product/"+ id +"/detail?languageId=-5&appId=1";
+
+    return this.http.get<ResponseGetDetailApi>(urlEndPoint)
+      .pipe(
+        map(resp => {
+          let sweatshirtDetail: ProductCard = this.typedProduct(resp);
+          return sweatshirtDetail;
+        })
+      );
+  }
+
   //Este metodo tipea la respuesta del servicio al tipo ProductCard
-  private typedProduct(product: Product): ProductCard {
-    let chunkImg1 = product.bundleProductSummaries[0].detail.xmedia[0].path;
-    let chunkImg2 = product.bundleProductSummaries[0].detail.xmedia[0].xmediaItems[0].medias[0].idMedia;
+  private typedProduct(product: Product | ResponseGetDetailApi): ProductCard {
+    let chunkImg1 = product.bundleProductSummaries[0].detail.xmedia![0].path;
+    let chunkImg2 = product.bundleProductSummaries[0].detail.xmedia![0].xmediaItems[0].medias[0].idMedia;
     let newProduct: ProductCard = {
       id: product.id.toString(),
       image: this.createImgSweatshirt("https://static.oysho.net/6/photos2", chunkImg1, chunkImg2),
