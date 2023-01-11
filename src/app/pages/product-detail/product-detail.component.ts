@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SweatshirtsService } from 'src/app/core/services/product/sweatshirts.service';
-import { ProductCard } from 'src/app/shared/interfaces/product-card';
+import { ProductService } from 'src/app/core/services/product/product.service';
+import { ProductCard } from 'src/app/core/services/product/interfaces/product-card';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,14 +11,14 @@ import { ProductCard } from 'src/app/shared/interfaces/product-card';
 
 export class ProductDetailComponent implements OnInit {
   private idProduct: string = '';
-  sweatshirtDetail: ProductCard = {};
+  sweatshirtDetail: ProductCard = {id: '', title: ''};
 
-  constructor(private sweatshirtService: SweatshirtsService, private route: ActivatedRoute) {
+  constructor(private productService: ProductService, private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
     this.idProduct = this.route.snapshot.paramMap.get("id")!;
-    this.sweatshirtService.getSweatshirtDetail(this.idProduct).subscribe(product => {
+    this.productService.getSweatshirtDetail(this.idProduct).subscribe(product => {
       this.sweatshirtDetail = product;
     });
   }

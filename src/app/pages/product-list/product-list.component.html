@@ -1,7 +1,6 @@
-<oy-subheader></oy-subheader>
 <div class="grid-list">
   <div *ngFor="let sweatshirt of sweatshirts" class="grid-list__product">
-    <a [routerLink]="['/detalle-producto', sweatshirt.id]">
+    <a [routerLink]="['/sweatshirts/product-detail', sweatshirt.id]">
       <img [src]="sweatshirt.image" [alt]="sweatshirt.title" [title]="sweatshirt.title" class="product-img">
       <h3>{{sweatshirt.title}}</h3>
       <p><i>{{sweatshirt.price!}}</i></p>

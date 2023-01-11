@@ -1,5 +1,5 @@
 //Esta interfaz nos permite tipar la respuesta del servicio get sudaderas
-export interface ResponseGetApi {
+export interface ResponseGetSweatshirts {
   gridElements: GridElement[];
   products:     Product[];
   rueiData:     RueiData;

@@ -1,7 +1,7 @@
 //Esta interfaz nos permite mapear los detalles del producto
 export interface ProductCard {
-  id?: string,
+  id: string,
   image?: string,
-  title?: string,
+  title: string,
   price?: string,
 }

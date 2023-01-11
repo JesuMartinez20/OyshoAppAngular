@@ -1,4 +1,5 @@
-export interface ResponseGetDetailApi {
+//Esta interfaz nos permite tipar la respuesta del servicio get detail sudaderas
+export interface ResponseGetSweatshirtDetail {
   id:                     number;
   type:                   string;
   name:                   string;

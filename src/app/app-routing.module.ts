@@ -7,7 +7,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/product-list/product-list.module').then(module => module.ProductListModule)
   },
   {
-    path: 'detalle-producto',
+    path: 'sweatshirts/product-detail',
     loadChildren: () => import('./pages/product-detail/product-detail.module').then(module => module.ProductDetailModule)
   },
   { path: '**', redirectTo: ''}

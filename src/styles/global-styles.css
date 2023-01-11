@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('./assets/css/google-fonts.css');
+@import url('../assets/css/google-fonts.css');
+@import url('./global-styles-buttons.css');
+@import url('./global-styles-icons.css');
+@import url('./global-styles-layouts.css');
 
 html, body {
   height: 100%;
@@ -32,32 +35,3 @@ a {
 a:active, a:visited {
   color: black;
 }
-
-span[class*=icon-] {
-  cursor: pointer;
-}
-
-.icon-lg {
-  width: 32px;
-  height: 32px;
-}
-
-.icon-md {
-  width: 24px;
-  height: 24px;
-}
-
-.btn-oy {
-  border-radius: 2rem;
-  padding: 0.5rem 2rem;
-  background-color: black;
-  color: white;
-}
-
-.product-img {
-  width: 100%;
-  height: auto;
-}
-
-
-

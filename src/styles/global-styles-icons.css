@@ -1,0 +1,13 @@
+span[class*=icon-] {
+  cursor: pointer;
+}
+
+.icon-lg {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-md {
+  width: 24px;
+  height: 24px;
+}
