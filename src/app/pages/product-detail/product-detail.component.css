@@ -10,6 +10,23 @@
   width: 30%;
 }
 
-.feature-price--grey {
+.product-detail__features {
+  width: 30%;
+}
+
+.feature-reference--grey {
   color: grey;
+}
+
+.produc-detail__features__colors {
+  display: flex;
+}
+
+.produc-detail__features__colors .produc-detail__features-list-colors {
+  padding: 0;
+  margin-left: 1rem;
+}
+.produc-detail__features__colors .produc-detail__features-color-item {
+  color: grey;
+  margin-right: 1rem;
 }

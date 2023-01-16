@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { ProductListComponent } from './product-list.component';
 
 const routes: Routes = [
-  { path: 'sweatshirts', component: ProductListComponent },
-  { path: '', redirectTo: 'sweatshirts', pathMatch: 'full' },
+  { path: environment.pathSweatshirts, component: ProductListComponent },
+  { path: '', redirectTo: environment.pathSweatshirts, pathMatch: 'full' },
 ];
 
 @NgModule({

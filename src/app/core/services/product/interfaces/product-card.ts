@@ -3,5 +3,8 @@ export interface ProductCard {
   id: string,
   image?: string,
   title: string,
+  description?: string,
+  reference?: string,
   price?: string,
+  colors?: string[]
 }

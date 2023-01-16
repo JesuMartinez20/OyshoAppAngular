@@ -35,3 +35,7 @@ a {
 a:active, a:visited {
   color: black;
 }
+
+p {
+  line-height: normal;
+}

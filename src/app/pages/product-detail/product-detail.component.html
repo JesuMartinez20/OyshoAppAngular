@@ -1,10 +1,19 @@
 <div class="product-detail">
   <div class="product-detail__image">
-    <img [src]="sweatshirtDetail.image" [alt]="sweatshirtDetail.title" [title]="sweatshirtDetail.title" class="product-img">
+    <img [src]="sweatshirtDetail.image" [alt]="sweatshirtDetail.title" [title]="sweatshirtDetail.title"
+      class="product-img">
   </div>
   <div class="product-detail__features">
     <h2>{{sweatshirtDetail.title}}</h2>
-    <p class="feature-price--grey">{{sweatshirtDetail.price!}}</p>
-    <p><i>Id: {{sweatshirtDetail.id}}</i></p>
+    <p>{{sweatshirtDetail.description}}</p>
+    <p><b>{{sweatshirtDetail.price! | formatPrice}}</b></p>
+    <p class="feature-reference--grey">Ref. <i>{{sweatshirtDetail.reference}}</i></p>
+    <div class="produc-detail__features__colors">
+      <p>Colores:</p>
+      <ul class="produc-detail__features__colors produc-detail__features-list-colors">
+        <li *ngFor="let color of sweatshirtDetail.colors" class="produc-detail__features-color-item">
+          {{color}}</li>
+      </ul>
+    </div>
   </div>
 </div>

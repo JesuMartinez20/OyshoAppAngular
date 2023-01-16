@@ -15,7 +15,10 @@ export function typedProduct(product: Product | ResponseGetSweatshirtDetail): Pr
     id: product.id.toString(),
     image: createImgSweatshirt(environment.apiGetImgSweatshirt, chunkImg1, chunkImg2),
     title: product.name,
-    price: product.bundleProductSummaries[0].detail.colors[0].sizes[0].price
+    description: product.bundleProductSummaries[0].detail.longDescription,
+    reference: product.bundleProductSummaries[0].detail.displayReference,
+    price: product.bundleProductSummaries[0].detail.colors[0].sizes[0].price,
+    colors: product.bundleProductSummaries[0].detail.colors.map(color => color.name)
   }
   return newProduct;
 }
