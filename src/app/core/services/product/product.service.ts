@@ -18,6 +18,7 @@ export class ProductService {
 
   getSweatshirts() {
     this.urlEndPoint = environment.apiGetSweatshirts;
+    let sweatshirtsFiltered: ProductCard[] = [];//Este array filtrara los productos que tengan diferentes titulos
 
     return this.http.get<ResponseGetSweatshirts>(this.urlEndPoint)
       .pipe(
@@ -25,7 +26,22 @@ export class ProductService {
           return resp.products.filter(product => product.bundleProductSummaries.length > 0).map(product => {
             let sweatshirt: ProductCard = typedProduct(product);
             return sweatshirt;
-          })
+          }).map(product => {
+            let uniqueProduct: ProductCard = { id: '', title: '' };
+
+            if (sweatshirtsFiltered.length >= 1) {
+              let sweatshirtFound = sweatshirtsFiltered.find(sweatshirt => sweatshirt.title === product.title);
+              if (!sweatshirtFound) {
+                uniqueProduct = product;
+                sweatshirtsFiltered.push(uniqueProduct);
+              }
+            } else {
+              uniqueProduct = product;
+              sweatshirtsFiltered.push(uniqueProduct);
+            }
+
+            return uniqueProduct;
+          }).filter(sweatshirt => sweatshirt.id && sweatshirt.title);
         })
       );
   }

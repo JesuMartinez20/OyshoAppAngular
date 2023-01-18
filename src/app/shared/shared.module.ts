@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormatPricePipe } from './pipes/format-price.pipe';
+import { RouterModule } from '@angular/router';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
-  declarations: [FormatPricePipe],
+  declarations: [FormatPricePipe, CardListComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  exports: [FormatPricePipe]
+  exports: [FormatPricePipe, CardListComponent]
 })
 export class SharedModule { }

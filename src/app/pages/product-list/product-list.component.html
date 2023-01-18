@@ -1,9 +1,5 @@
 <div class="grid-list">
-  <div *ngFor="let sweatshirt of sweatshirts" class="grid-list__product">
-    <a [routerLink]="['/'+ pathSweatshirts +'/product-detail', sweatshirt.id]">
-      <img [src]="sweatshirt.image" [alt]="sweatshirt.title" [title]="sweatshirt.title" class="product-img">
-      <h3>{{sweatshirt.title}}</h3>
-      <p><i>{{sweatshirt.price! | formatPrice}}</i></p>
-    </a>
+  <div *ngFor="let sweatshirt of (sweatshirts$ | async)" class="grid-list__product">
+    <oy-card [sweatshirt]="sweatshirt"></oy-card>
   </div>
 </div>
